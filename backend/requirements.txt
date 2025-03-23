@@ -1,0 +1,11 @@
+fastapi==0.109.0
+pillow==9.0.1
+pydantic==1.10.11 
+langchain==0.2.16
+langchain_groq==0.1.10
+groq ==0.18.0
+python-dotenv
+beautifulsoup4
+selenium
+uvicorn
+requests
