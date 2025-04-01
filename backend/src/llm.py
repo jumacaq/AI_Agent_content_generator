@@ -4,24 +4,30 @@ from langchain_groq import ChatGroq
 from groq import Groq
 
 
+# Cargar variables del archivo .env
 load_dotenv()
 
 
 class GroqModelHandler:
     def __init__(self):
-        api_key = os.getenv("GROQ_API_KEY")
-        model_name = os.getenv("MODEL_NAME")
+        # TODO: Load the Groq API key and model name from environment variables
+        api_key = None
+        model_name = None
 
+        # TODO: Validate if the API key is provided
         if not api_key:
             raise ValueError(
                 "La API Key de Groq no está configurada en el archivo .env"
             )
 
-        self.client = Groq(api_key=api_key)
-        self.llm = ChatGroq(temperature=0, groq_api_key=api_key, model_name=model_name)
+        # TODO: Initialize the Groq client and ChatGroq LLM
+        self.client = None
+        self.llm = None
 
     def get_client(self):
-        return self.client
+        # TODO: Return the Groq client instance
+        return None
 
     def get_llm(self):
+        # Example method for students to follow
         return self.llm

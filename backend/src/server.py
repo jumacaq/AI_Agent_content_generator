@@ -28,32 +28,35 @@ def health_check():
 def generate_content(request: ContentGeneration):
     """Generate content based on metadata scraped from the given URL"""
     try:
+        # TODO: Log the start of the scraping process
         logger.info(f"Scraping metadata from URL: {request.url}")
 
-        # Extraer metadata con MercadoLibreScraper
-        metadata = FalabellaScraper(str(request.url)).scrape()
+        # TODO: Scrape metadata using FalabellaScraper
+        metadata = None
 
-        # Verificar si metadata contiene datos válidos
+        # TODO: Validate if metadata is valid
         if not metadata or not isinstance(metadata, dict):
             raise ValueError("No se pudo extraer metadata válida del producto.")
 
+        # TODO: Log the scraped metadata
         logger.info(f"Metadata scraped: {metadata}")
 
-        # Generar contenido con el modelo LLM
-        content = ContentGenerator().generate_content(
-            metadata, request.new_target_audience, request.new_tone, request.language
-        )
+        # TODO: Generate content using the ContentGenerator
+        content = None
 
+        # TODO: Log successful content generation
         logger.info("Content generated successfully")
         return {"generated_content": content}
 
     except ValueError as ve:
+        # TODO: Handle ValueError and log the error
         logger.error(f"ValueError: {ve}")
         raise HTTPException(
             status_code=400, detail={"error": "Datos inválidos", "message": str(ve)}
         )
 
     except Exception as e:
+        # TODO: Handle unexpected errors and log the error
         logger.error(f"Error interno: {e}")
         raise HTTPException(
             status_code=500, detail={"error": "Error interno", "message": str(e)}

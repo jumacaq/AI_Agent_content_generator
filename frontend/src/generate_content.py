@@ -5,14 +5,15 @@ import streamlit as st
 
 def compute_content(payload: ContentGeneration, server_url: str):
     try:
-        r = requests.post(
-            server_url,
-            json=payload.dict(),
-            headers={"Content-Type": "application/json"},
-            timeout=10,
-        )
+        # TODO: Send a POST request to the server with the payload
+        r = None
+
+        # TODO: Raise an exception if the request fails
         r.raise_for_status()
-        generated_content = r.json()
-        return generated_content['generated_content']['text']['content']
+
+        # TODO: Extract and return the generated content from the response
+        generated_content = None
+        return None
     except requests.exceptions.RequestException as e:
-        return f"Error: {str(e)}"
+        # TODO: Handle request exceptions and return an error message
+        return None

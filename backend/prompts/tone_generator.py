@@ -1,17 +1,16 @@
-GENERATE_REFINED_INFO = """Tu tarea es **refinar y mejorar** un guion de **reel de Instagram o TikTok**, aplicando **pensamiento en cadena (Chain of Thought)** para ajustar el **tono, lenguaje y público objetivo** según los siguientes parámetros:  
+# TODO: Define the GENERATE_REFINED_INFO template for refining and improving a script for Instagram or TikTok reels.
+# The template should include placeholders for:
+# - Original Script: {previous_script}
+# - New Target Audience: {new_target_audience}
+# - New Tone: {new_tone}
+# - Language: {language}
+# The process should involve:
+# - Analyzing the original script to identify what works and what needs adjustment.
+# - Adapting the tone and language to align with the new target audience.
+# - Optimizing the message for clarity and coherence.
+# - Enhancing the Call to Action (CTA) to maximize impact.
+# The response should not include emojis and must follow the specified format instructions.
 
-🔹 **Entrada Original:**  
-{previous_script}  
+GENERATE_REFINED_INFO = """
 
-🔹 **Nuevo Público Objetivo:** {new_target_audience}  
-🔹 **Nuevo Tono:** {new_tone}  
-🔹 **Idioma:** {language}  
-
-### **Proceso de Refinamiento**  
-**Análisis del guion original**: Identifica qué partes funcionan bien y cuáles deben ajustarse.  
-**Adaptación del tono y lenguaje**: Modifica expresiones y estructura para alinearlas con el nuevo público.  
-**Optimización del mensaje**: Asegura claridad y coherencia con los parámetros dados.  
-**Refuerzo del Call to Action (CTA)**: Ajusta la llamada a la acción para maximizar el impacto en la audiencia.  
-** No incluir emojis en tu respuesta**
-### **Salida esperada**  
 Un guion optimizado y mejorado, alineado con el tono, idioma y público objetivo especificados. La respuesta debe seguir este formato:\n{format_instructions}\n"""

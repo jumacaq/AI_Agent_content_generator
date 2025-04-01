@@ -1,21 +1,20 @@
+# TODO: Define the GENERATE_INFO template for generating an engaging and dynamic script for Instagram or TikTok reels.
+# The template should include placeholders for:
+# - Title: {title}
+# - Price: {price}
+# - Product Info: {description}
+# - Additional Info: {additional_info}
+# - Available Sizes: {available_sizes}
+# - Image Description: {image_description}
+# The tone should be fun, fresh, and trendy, targeting young people aged 18-25.
+# The script should be no longer than 30 seconds, using short phrases, trendy words, and no emojis.
+# Example structure:
+# - Catchy opening: An intriguing question or phrase like "If you don't know this yet, you're missing something EPIC!"
+# - Key benefits: Explain what makes the product special in 2-3 sentences.
+# - Call to Action: End with something catchy like "Go try it now!"
+# Ensure the language resonates with Gen Z and Millennials. Make it viral!
+# The response should follow the specified format instructions.
 
-GENERATE_INFO = """Tu tarea es generar un guion atractivo y dinámico para un **reel de Instagram o TikTok**, dirigido a **jóvenes entre 18 y 25 años**.  
+GENERATE_INFO = """
 
-**Título:** {title}  
-**Precio:** {price}  
-**Info del Producto:** {description}  
-**Info Adicional:** {additional_info}  
-**Tallas Disponibles:** {available_sizes}  
-**Descripción de la Imagen:** {image_description}  
-
-**Tono:** Divertido, fresco y **trendy**  
-**Duración:** Máximo **30 segundos**  
-**Formato:** Usa frases cortas, emojis y palabras en tendencia.  
-
-**Ejemplo de estructura:**  
-**Apertura llamativa:** Una pregunta intrigante o una frase tipo "Si aún no conoces esto, ¡te estás perdiendo algo ÉPICO!  "  
-**Beneficios clave:** Explica en **2-3 frases** lo que hace especial al producto.  
-**Call to Action:** Finaliza con algo llamativo como "¡Corre a probarlo!  "  
-** No incluir emojis en tu respuesta**
-**Importante:** Usa un lenguaje que conecte con la Gen Z y Millennials. ¡Hazlo viral!  
 Tu respuesta debe estar en el siguiente formato.\n{format_instructions}\n"""
