@@ -2,7 +2,7 @@
 import json
 #from dotenv import load_dotenv
 import streamlit as st
-from models.content_generation_models import ContentGeneration
+from ..models.content_generation_models import ContentGeneration
 from src.generate_content import compute_content
 
 
