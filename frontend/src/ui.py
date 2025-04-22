@@ -1,13 +1,13 @@
-import os
+#import os
 import json
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import streamlit as st
 from models.content_generation_models import ContentGeneration
 from src.generate_content import compute_content
 
 
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 
 
 # Set the title of the Streamlit app
@@ -29,7 +29,7 @@ language = st.text_input("Idioma del contenido")
 # Add a button to trigger content generation
 if st.button("Generar Guion"):
     if input_url and new_target_audience and new_tone and language:
-        backend_url = os.getenv("BACKEND_URL", "http://backend:8004/content_generator")
+        backend_url = st.secrets.get("BACKEND_URL", "http://backend:8004/content_generator")
         # Create a payload using the ContentGeneration model
         payload = ContentGeneration(
             url=input_url,
@@ -43,8 +43,7 @@ if st.button("Generar Guion"):
 
         # Display the generated script and add a download button
         st.header("Guion Finalizado")
-        # TEMPORAL para depuración
-        #st.write("Respuesta completa del backend:", refined_script)
+        
 
         # Procesar respuesta si tiene la forma esperada
         try:
