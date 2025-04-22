@@ -28,36 +28,48 @@ def health_check():
 def generate_content(request: ContentGeneration):
     """Generate content based on metadata scraped from the given URL"""
     try:
-        # TODO: Log the start of the scraping process
+        # Log the start of the scraping process
         logger.info(f"Scraping metadata from URL: {request.url}")
 
-        # TODO: Scrape metadata using FalabellaScraper
-        metadata = None
+        # Scrape metadata using FalabellaScraper
+        scraper = FalabellaScraper(request.url)
+        metadata = scraper.scrape()
+        
 
-        # TODO: Validate if metadata is valid
+        # Validate if metadata is valid
         if not metadata or not isinstance(metadata, dict):
             raise ValueError("No se pudo extraer metadata válida del producto.")
 
-        # TODO: Log the scraped metadata
+        # Log the scraped metadata
         logger.info(f"Metadata scraped: {metadata}")
 
-        # TODO: Generate content using the ContentGenerator
-        content = None
+        # Generate content using the ContentGenerator
+        generator = ContentGenerator()
+        content = generator.generate_content(
+            metadata,
+            request.target_audience,
+            request.tone,
+            request.language,
+        )
+        #content = None
 
-        # TODO: Log successful content generation
+        # Log successful content generation
         logger.info("Content generated successfully")
         return {"generated_content": content}
 
     except ValueError as ve:
-        # TODO: Handle ValueError and log the error
+        # Handle ValueError and log the error
         logger.error(f"ValueError: {ve}")
         raise HTTPException(
             status_code=400, detail={"error": "Datos inválidos", "message": str(ve)}
         )
 
     except Exception as e:
-        # TODO: Handle unexpected errors and log the error
+        # Handle unexpected errors and log the error
         logger.error(f"Error interno: {e}")
         raise HTTPException(
             status_code=500, detail={"error": "Error interno", "message": str(e)}
         )
+    
+
+   

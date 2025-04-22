@@ -12,5 +12,15 @@
 # The response should not include emojis and must follow the specified format instructions.
 
 GENERATE_REFINED_INFO = """
+Analiza y mejora el siguiente guion para adaptarlo al nuevo público, tono e idioma:
 
-Un guion optimizado y mejorado, alineado con el tono, idioma y público objetivo especificados. La respuesta debe seguir este formato:\n{format_instructions}\n"""
+Guion original:
+{previous_script}
+
+Público objetivo: {new_target_audience}
+Tono: {new_tone}
+Idioma: {language}
+
+Optimiza el mensaje para claridad, coherencia y efectividad del CTA. Evita emojis.
+La respuesta debe seguir este formato:\n{format_instructions}\n
+"""

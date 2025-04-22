@@ -5,11 +5,17 @@ class ContentGenerationScript(BaseModel):
     content: str = Field(..., description="Contenido textual del reel")
 
 
-# TODO: Define the ToneGenerationScript class with a field for the refined content
+# ✅ Define ToneGenerationScript with refined content
 class ToneGenerationScript(BaseModel):
-    pass
+    refined_content: str = Field(..., description="Contenido ajustado con tono y audiencia objetivo")
 
 
-# TODO: Define the ContentGeneration class with fields for URL, target audience, tone, and language
+# ✅ Define ContentGeneration to hold metadata about generation context
 class ContentGeneration(BaseModel):
-    pass
+    url: str = Field(..., description="URL del producto")
+    target_audience: str = Field(..., description="Audiencia objetivo")
+    tone: str = Field(..., description="Tono deseado del contenido")
+    language: str = Field(..., description="Idioma del contenido")    
+
+
+    

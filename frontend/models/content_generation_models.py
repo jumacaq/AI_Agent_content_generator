@@ -1,14 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 
 
 class ContentGeneration(BaseModel):
-    url: str  # Example field for students to follow
+    url: str = Field(..., description="URL del producto") # Example field for students to follow
 
-    # TODO: Add a field for the new target audience
-    new_target_audience: None
-
-    # TODO: Add a field for the new tone
-    new_tone: None
-
-    # TODO: Add a field for the language
-    language: None
+    target_audience: str = Field(..., description="Nuevo público objetivo")  #field for the new target audience
+    tone: str = Field(..., description="Tono del contenido") #field for the new tone
+    language: str = Field(..., description="Idioma del contenido")  #field for the language
+    
